@@ -34,6 +34,7 @@ webcam=VideoCamera()
 base_dir = os.path.dirname(__file__)
 print(base_dir)
 #import the models provided in the OpenCV repository
+#give correct folder name
 model = cv2.dnn.readNetFromCaffe(base_dir+'/face_detection_model/deploy.prototxt', base_dir+'/face_detection_model/res10_300x300_ssd_iter_140000.caffemodel')
 #loop through all the files in the folder
 name=input('person: ')
@@ -67,7 +68,7 @@ if not os.path.exists(folder):
           #print("Extracted " + str(count) + " faces from all images")
         key = cv2.waitKey(1) & 0xFF
 
-	# if the `q` key was pressed, break from the loop
+	# if the 'c' is pressed then the image will be captured
         if key == ord("c") or key == ord("C"):
             cv2.imwrite(folder+'/'+ str(counter) + '.jpg',image1)
             counter=counter+1
